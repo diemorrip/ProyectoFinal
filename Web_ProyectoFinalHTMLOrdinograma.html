@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina Web - Equipo 1 - Ordinograma</title>
+    <link rel="stylesheet" href="Web_ProyectoFinalCSS(1).css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div>
+            <!-- CORRECCIÓN: nombre del archivo sin espacio -->
+            <img id="logo" src="Logo_empresa.png" alt="Logo Equipo 1">
+            <strong>Equipo1</strong>
+        </div>
+
+        <!-- Botón hamburguesa (visible solo en móvil) -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <nav id="mainNav">
+            <ul>
+                <li><a href="Web_ProyectoFinalHTML.html">Inicio</a></li>
+                <li><a href="Web_ProyectoFinalHTML.html#servicios">Servicios</a></li>
+                <li><a href="#organigrama">Organigrama</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-actions">
+            <a href="#">Perfil</a>
+            <a href="#">⚙️</a>
+        </div>
+    </header>
+
+    <main id="organigrama" class="animacion-entrada">
+        <section>
+            <h1>Organigrama de Equipo1</h1>
+            <p>[Descripción breve del organigrama y su importancia]</p>
+            
+            <div>
+                <p>[Organigrama]</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Descripción de los departamentos</h2>
+            <p>[Breve descripción de cada departamento y sus funciones]</p>
+        </section>
+    </main>
+
+    <footer>
+        <div>
+            <h3>Equipo1</h3>
+            <p>Puerto de sagunto</p>
+            <p>[Fuentes de contacto]</p>
+        </div>
+
+        <div>
+            <h4>Navegación</h4>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#organigrama">Organigrama</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h4>Legal</h4>
+            <ul>
+                <li><a href="#">Aviso legal</a></li>
+                <li><a href="#">Privacidad</a></li>
+                <li><a href="#">Cookies</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h4>Redes de la empresa</h4>
+            <ul>
+                <li><a href="#">Enlace a Red Social 1</a></li>
+                <li><a href="#">Enlace a Red Social 2</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <p>[Licencia y derechos de la empresa] &copy; 2026. Diseñado por Equipo-1.</p>
+        </div>
+    </footer>
+
+    <!-- Script menú hamburguesa -->
+    <script>
+        const toggle = document.getElementById('menuToggle');
+        const nav = document.getElementById('mainNav');
+
+        toggle.addEventListener('click', () => {
+            const isOpen = nav.classList.toggle('open');
+            toggle.setAttribute('aria-expanded', isOpen);
+        });
+
+        // Cerrar menú al hacer clic en un enlace
+        nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('open');
+                toggle.setAttribute('aria-expanded', false);
+            });
+        });
+    </script>
+
+</body>
+</html>
