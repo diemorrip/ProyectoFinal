@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NovaTech Solutions - Equipo 1</title>
+    <link rel="stylesheet" href="Web_ProyectoFinalCSS(1).css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Roboto+Slab:wght@400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <div>
+            <strong>NovaTech Solutions</strong>
+
+        </div>
+
+        <!-- Botón hamburguesa (visible solo en móvil) -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav id="header-legal">
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="Web_ProyectoFinalHTMLOrdinograma.html">Organigrama</a></li>
+            </ul>
+
+
+        </nav>
+            <div class="header-actions">
+                <a href="#">Perfil</a>
+                <a href="#">⚙️</a>
+            </div>
+    </header>
+
+    <main id="inicio" class="animacion-entrada">
+
+        <section>
+            <h1>NovaTech Solutions</h1>
+            <p>Empresa especializada en el diseño, implantación y mantenimiento de infraestructuras tecnológicas para
+                empresas.</p>
+
+            <div class="empresa-imagen"></div>
+
+        </section>
+
+        <section>
+            <h2>¿Quiénes somos?</h2>
+            <p>NovaTech Solutions es una empresa especializada en el diseño,
+                implantación y mantenimiento de infraestructuras tecnológicas para empresas.
+                Ofrece soluciones informáticas adaptadas a las necesidades de cada cliente,
+                incluyendo administración de sistemas, redes corporativas,
+                desarrollo de aplicaciones y consultoría tecnológica. </p>
+        </section>
+
+        <section id="servicios">
+            <h2>Servicios destacados</h2>
+            <p></p>
+
+            <ul>
+                <li>
+                    <h3>Administración de Sistemas y Redes</h3>
+                    <p>Diseño, instalación y mantenimiento de servidores Linux y Windows, configuración de redes
+                        corporativas, gestión de usuarios y monitorización de infraestructuras. </p>
+                </li>
+                <li>
+                    <h3>Ciberseguridad Empresarial</h3>
+                    <p>Implementación de firewalls, copias de seguridad, auditorías de seguridad, control de accesos y
+                        protección frente a amenazas informáticas. </p>
+                </li>
+                <li>
+                    <h3>Desarrollo de Soluciones Personalizadas </h3>
+                    <p>Desarrollo de aplicaciones web y bases de datos adaptadas a las necesidades específicas de cada
+                        cliente para mejorar la gestión de información y automatizar procesos. </p>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2 id="Formulario">Formulario de contacto</h2>
+            <form>
+                <div>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre">
+                </div>
+                <div>
+                    <label for="correo">Correo electrónico:</label>
+                    <input type="email" id="correo" name="correo">
+                </div>
+                <div>
+                    <label for="mensaje">Mensaje / Consulta de Soporte:</label>
+                    <textarea id="mensaje" name="mensaje"></textarea>
+                </div>
+                <button type="submit" onclick="alert('Formulario enviado!')">Enviar</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <div>
+            <h3>NovaTech Solutions </h3>
+            <p>Valencia, España </p>
+            <a href="#Formulario">Formulario de contacto</a>
+        </div>
+
+        <div>
+            <h4>Navegación</h4>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="Web_ProyectoFinalHTMLOrdinograma.html">Organigrama</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h4>Legal</h4>
+            <ul>
+                <li><a href="Web_ProyectoFinalLicenciasSeguridadETC.html">Aviso legal</a></li>
+                <li><a href="Web_ProyectoFinalLicenciasSeguridadETC.html#privacidad">Privacidad</a></li>
+                <li><a href="Web_ProyectoFinalLicenciasSeguridadETC.html#cookies">Cookies</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h4>Redes de la empresa</h4>
+            <ul>
+                <li><a href="https://es.linkedin.com/?mcid=6968657504633266178&src=go-pa&trk=sem-ga_campid.18146679037_asid.140850334975_crid.694860685343_kw.linkedin_d.c_tid.kwd-148086543_n.g_mt.e_geo.1005545&cid=&gclsrc=aw.ds&gad_source=1&gad_campaignid=18146679037&gclid=CjwKCAjwxITRBhBYEiwA6mZm7UbvJkmJY9Wa9mrvaSmHdmpWG95wHnGVvFz-_8-oIbEthBIxSs3PqxoCRnoQAvD_BwE"
+                        target="_blank">Linkedin</a>
+                </li>
+                <li><a href="https://www.infojobs.net/" target="_blank">Infojobs</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <a href="Web_ProyectoFinalLicenciasSeguridadETC.html">[Licencia y derechos de la empresa] &copy; 2021.
+                Diseñado por Equipo-1.</a>
+        </div>
+    </footer>
+
+    <!-- Script menú hamburguesa -->
+    <script>
+        const toggle = document.getElementById('menuToggle');
+        const nav = document.getElementById('mainNav');
+
+        toggle.addEventListener('click', () => {
+            const isOpen = nav.classList.toggle('open');
+            toggle.setAttribute('aria-expanded', isOpen);
+        });
+
+        // Cerrar menú al hacer clic en un enlace
+        nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('open');
+                toggle.setAttribute('aria-expanded', false);
+            });
+        });
+    </script>
+
+</body>
+
+</html>

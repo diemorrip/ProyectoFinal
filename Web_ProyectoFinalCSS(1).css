@@ -1,0 +1,585 @@
+/* ==========================================================================
+   1. VARIABLES DE COLOR (Paleta oficial del Equipo 1)
+   ========================================================================== */
+:root {
+    /* Colores primarios */
+    --azul-marino-oscuro: #1a2c4c;
+    --azul-marino-medio: #204bbe;
+    --azul-acento: #2363ef;
+    --azul-claro-badge: #eff6ff;
+    
+    /* Grises y neutros */
+    --gris-footer: #111827;
+    --gris-claro-bg: #f3f4f6;
+    --blanco-superficie: #ffffff;
+    --gris-texto-muted: #6b7280;
+}
+
+/* ==========================================================================
+   2. ESTILOS GENERALES Y TIPOGRAFÍA
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--gris-claro-bg);
+    color: var(--gris-footer);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Roboto Slab', serif;
+    color: var(--azul-marino-oscuro);
+}
+.empresa-imagen {
+  background-image: url('Imagen empresa.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 300px;
+}
+#aviso-legal{
+    text-align: left;
+}
+/* ==========================================================================
+   3. HEADER Y NAVEGACIÓN
+   ========================================================================== */
+header {
+    background-color: var(--blanco-superficie);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+header div:first-child {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+header div:first-child img {
+    height: 40px;
+    width: auto;
+}
+
+header div:first-child span {
+    background-color: var(--azul-acento);
+    color: var(--blanco-superficie);
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+header strong {
+    font-size: 1.2rem;
+    color: var(--azul-marino-oscuro);
+    white-space: nowrap;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--gris-texto-muted);
+    font-weight: 500;
+    transition: color 0.2s ease;
+    white-space: nowrap;
+}
+
+nav a:hover {
+    color: var(--azul-acento);
+}
+
+.header-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+
+header div:last-child a {
+    color: var(--azul-marino-medio);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: 1px solid var(--azul-marino-medio);
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+header div:last-child a:hover {
+    background-color: var(--azul-marino-medio);
+    color: var(--blanco-superficie);
+}
+
+/* Botón menú hamburguesa (oculto por defecto en escritorio) */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: var(--azul-marino-oscuro);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* ==========================================================================
+   4. ESTRUCTURA PRINCIPAL (MAIN)
+   ========================================================================== */
+main {
+    max-width: 1200px;
+    margin: 2.5rem auto;
+    padding: 0 1.5rem;
+}
+
+section {
+    background-color: var(--blanco-superficie);
+    padding: 2.5rem;
+    border-radius: 12px;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+/* Sección Hero */
+main section:first-of-type {
+    text-align: center;
+}
+
+main section:first-of-type h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+}
+
+main section:first-of-type p:first-of-type {
+    font-size: 1.2rem;
+    color: var(--gris-texto-muted);
+    margin-bottom: 2rem;
+}
+
+/* Contenedor de Imágenes */
+main section:first-of-type div {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+/* =========================================
+   ANIMACIÓN DE ENTRADA
+   ========================================= */
+@keyframes fadeInSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animacion-entrada {
+    animation: fadeInSlideUp 0.8s ease-out forwards;
+}
+
+main section:first-of-type div p {
+    background-color: var(--azul-claro-badge);
+    color: var(--azul-acento);
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-weight: bold;
+    border: 1px dashed rgba(35, 99, 239, 0.3);
+}
+
+/* Títulos de sección */
+section h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1.25rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 4px;
+    background-color: var(--azul-acento);
+    border-radius: 2px;
+}
+
+/* Sección Servicios */
+#servicios ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+#servicios li {
+    background-color: var(--blanco-superficie);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-top: 4px solid var(--azul-marino-medio);
+    padding: 1.75rem;
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+}
+
+#servicios li:hover {
+    transform: translateY(-4px);
+}
+
+#servicios li h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+}
+
+#servicios li p {
+    color: var(--gris-texto-muted);
+    font-size: 0.95rem;
+}
+
+/* Formulario de Contacto */
+form {
+    max-width: 600px;
+    margin: 1.5rem auto 0;
+}
+
+form div {
+    margin-bottom: 1.25rem;
+}
+
+form label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+form input:focus, form textarea:focus {
+    outline: none;
+    border-color: var(--azul-acento);
+    box-shadow: 0 0 0 3px rgba(35, 99, 239, 0.15);
+}
+
+form button {
+    background-color: var(--azul-acento);
+    color: var(--blanco-superficie);
+    border: none;
+    padding: 0.85rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.2s;
+}
+
+form button:hover {
+    background-color: var(--azul-marino-medio);
+}
+
+/* ==========================================================================
+   5. FOOTER
+   ========================================================================== */
+footer {
+    background-color: var(--gris-footer);
+    color: var(--blanco-superficie);
+    padding: 3rem 2rem 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2.5rem;
+}
+
+footer h3, footer h4 {
+    color: var(--blanco-superficie);
+    margin-bottom: 1rem;
+}
+
+footer h3 {
+    font-size: 1.4rem;
+}
+
+footer h4 {
+    font-size: 1.1rem;
+}
+
+footer p {
+    color: var(--gris-texto-muted);
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer ul li {
+    margin-bottom: 0.5rem;
+}
+
+footer a {
+    color: var(--gris-texto-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+footer a:hover {
+    color: var(--azul-claro-badge);
+}
+
+footer div:last-child {
+    grid-column: 1 / -1;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1.5rem;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+/* ==========================================================================
+   6. MEDIA QUERIES — DISEÑO RESPONSIVE
+   ========================================================================== */
+
+/*
+   BREAKPOINTS USADOS:
+   - 1024px  → Tablet grande / iPad landscape
+   - 768px   → Tablet / iPad portrait
+   - 480px   → Móvil grande (iPhone XR = 414px, Galaxy S = 412px)
+   - 360px   → Móvil pequeño (Android básico)
+*/
+
+/* Evitar scroll horizontal en cualquier dispositivo */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* --- Tablet grande: hasta 1024px --- */
+@media (max-width: 1024px) {
+
+    main {
+        padding: 0 1.25rem;
+    }
+
+    #servicios ul {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* --- Tablet / iPad portrait: hasta 768px --- */
+@media (max-width: 768px) {
+
+    /* HEADER: fila logo + hamburguesa, nav desplegable debajo */
+    header {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.75rem 1rem;
+        gap: 0;
+        position: sticky;
+        top: 0;
+    }
+
+    header div:first-child {
+        flex: 1;
+    }
+
+    .menu-toggle {
+        display: flex;
+        order: 2;
+    }
+
+    nav {
+        display: none;
+        width: 100%;
+        order: 3;
+        padding: 0.5rem 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.07);
+    }
+
+    nav.open {
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 0.75rem 0.25rem;
+        font-size: 1rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .header-actions {
+        display: none;
+    }
+
+    /* HERO */
+    main section:first-of-type h1 {
+        font-size: 2rem;
+    }
+
+    main section:first-of-type p:first-of-type {
+        font-size: 1rem;
+    }
+
+    main section:first-of-type div {
+        grid-template-columns: 1fr;
+    }
+
+    /* SECCIONES */
+    section {
+        padding: 1.5rem;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+    }
+
+    /* SERVICIOS: columna única */
+    #servicios ul {
+        grid-template-columns: 1fr;
+    }
+
+    /* FOOTER: 2 columnas */
+    footer {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 2rem 1.25rem 1rem;
+        gap: 1.5rem;
+    }
+}
+#header-legal{
+  display: flex;
+  justify-content: center;  /* centra horizontalmente */
+  align-items: center;       /* centra verticalmente */
+}
+
+/* --- Móvil grande: hasta 480px (cubre iPhone XR 414px, Galaxy S 412px) --- */
+@media (max-width: 480px) {
+
+    /* Evitar que cualquier elemento se desborde */
+    * {
+        max-width: 100%;
+    }
+
+    header {
+        padding: 0.6rem 0.875rem;
+    }
+
+    header strong {
+        font-size: 1rem;
+    }
+
+    header div:first-child img {
+        height: 32px;
+    }
+
+    main {
+        margin: 1rem auto;
+        padding: 0 0.875rem;
+    }
+
+    section {
+        padding: 1.25rem;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+    }
+
+    main section:first-of-type h1 {
+        font-size: 1.6rem;
+    }
+
+    section h2 {
+        font-size: 1.3rem;
+    }
+
+    /* Formulario ocupa todo el ancho */
+    form {
+        max-width: 100%;
+    }
+
+    /* FOOTER: columna única */
+    footer {
+        grid-template-columns: 1fr;
+        padding: 1.5rem 1rem 1rem;
+        gap: 1.25rem;
+    }
+
+    footer div:last-child {
+        grid-column: 1;
+    }
+}
+
+/* --- Móvil pequeño: hasta 360px (Android básico) --- */
+@media (max-width: 360px) {
+
+    header {
+        padding: 0.5rem 0.75rem;
+    }
+
+    header strong {
+        font-size: 0.9rem;
+    }
+
+    main section:first-of-type h1 {
+        font-size: 1.4rem;
+    }
+
+    section {
+        padding: 1rem;
+    }
+
+    #servicios li {
+        padding: 1.25rem;
+    }
+
+    form input,
+    form textarea {
+        font-size: 0.95rem;
+        padding: 0.6rem;
+    }
+}
